@@ -27,7 +27,7 @@ pipeline {
                 //sh './jenkins/scripts/deliver.sh'
                 sh 'scp -o StrictHostKeyChecking=no -i /tmp/Mars_POC.pem target/my-app-1.0-SNAPSHOT.jar centos@52.42.159.159:/home/centos'
                 //sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
-                sh 'ssh -i /tmp/Mars_POC.pem centos@52.42.159.159 java -jar /home/centos/my-app-1.0-SNAPSHOT.jar >output.txt'
+                sh 'ssh -i /tmp/Mars_POC.pem centos@52.42.159.159 java -jar /home/centos/my-app-1.0-SNAPSHOT.jar'
                 }
                 
                }
