@@ -8,11 +8,16 @@ pipeline {
               }
               }
               
+              stage('SnarQube'){
+                steps {
+                sh 'mvn sonar:sonar -Dsonar.host.url:"http://54.187.76.223:9000" -Dsonar.login:"ca1b626255c0c1320ad0fadada960aef6ebe466f"'
+              }
+              }
              stage('Artifactory configuration') {
               steps {
                 rtServer (
                   id : "ARTIFACTORY_SERVER",
-                  url: "http://52.25.107.19:8081/artifactory",
+                  url: "http://54.187.76.223:8081/artifactory",
                   credentialsId: "Devopsartifactory"
                   )
                   
